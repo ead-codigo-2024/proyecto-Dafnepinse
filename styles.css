@@ -121,31 +121,3 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-/* Estilos para la flecha de navegación */
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--primary-color);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    z-index: 2;
-}
-
-.scroll-down svg {
-    width: 60px; /* Tamaño de la flecha */
-    height: 60px;
-    stroke: var(--primary-color); /* Color de la flecha */
-    stroke-width: 2; /* Grosor de las líneas */
-    transform: rotate(150deg); /* Ajusta el ángulo aquí */
-}
-
-.scroll-down:hover {
-    opacity: 1;
-}
-
-.scroll-down svg:hover {
-    transform: rotate(150deg) scale(1.1); /* Amplía la flecha al pasar el mouse */
-}
