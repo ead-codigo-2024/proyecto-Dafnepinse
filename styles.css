@@ -1,3 +1,4 @@
+/* Variables de colores y tipografías */
 :root {
     --primary-color: white;
     --secondary-color: #333;
@@ -11,13 +12,14 @@
     --font-size-p: 1.2rem;
 }
 
-/* Reset */
+/* Reset de márgenes y padding para evitar inconsistencias entre navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos generales del body */
 body {
     font-family: var(--font-family-primary);
     color: var(--primary-color);
@@ -25,7 +27,9 @@ body {
     padding: 0;
 }
 
-/* Navbar styles */
+/* ============================================
+    NAVBAR (Barra de navegación)
+============================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -38,7 +42,7 @@ body {
 }
 
 .logo h1 {
-    font-family: "Playfair Display", bold;
+    font-family: var(--font-family-secondary);
     font-size: 40px;
     font-weight: bold;
 }
@@ -53,13 +57,15 @@ body {
 }
 
 .nav-links a {
-    font-family: Playfair, regular;
+    font-family: var(--font-family-secondary);
     text-decoration: none;
     color: var(--primary-color);
     font-size: 1rem;
 }
 
-/* Button Styling */
+/* ============================================
+    BOTONES
+============================================= */
 .shop-now a {
     text-decoration: none;
     border: 2px solid var(--primary-color);
@@ -75,7 +81,9 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* ============================================
+    PRIMERA SECCIÓN (Hero Section)
+============================================= */
 .hero-section {
     background: url('imagenes/FONDO-F1.jpg') no-repeat center center/cover;
     height: 100vh; /* Full screen height */
@@ -108,7 +116,7 @@ body {
 }
 
 .content h1 {
-    font-family: Montserrat, bold;
+    font-family: var(--font-family-secondary);
     font-size: 60px;
     font-weight: bold;
     text-transform: uppercase;
@@ -116,8 +124,256 @@ body {
 }
 
 .content p {
-    font-family: Playfair, regular;
+    font-family: var(--font-family-secondary);
     font-size: 25px;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* ============================================
+    SEGUNDA SECCIÓN (Acerca de)
+============================================= */
+.acerca-de {
+    height: 100vh; /* Altura completa de la ventana */
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Necesario para que las líneas se posicionen dentro de esta sección */
+}
+
+.acerca-de h1 {
+    font-family: var(--font-family-secondary);
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.acerca-de p {
+    font-family: var(--font-family-secondary);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Línea vertical decorativa centrada en la sección */
+.linea-vertical {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centra la línea */
+    width: 1.5px; /* Grosor de la línea */
+    background-color: rgb(53, 51, 51);
+}
+
+/* Línea vertical decorativa encima del título */
+.linea-vertical.superior {
+    top: 0; /* Posiciona la línea en la parte superior */
+    height: 20%; /* Ajusta la altura de la línea */
+}
+
+/* Línea vertical decorativa debajo del párrafo */
+.linea-vertical.inferior {
+    bottom: 0; /* Posiciona la línea en la parte inferior */
+    height: 20%; /* Ajusta la altura de la línea */
+}
+
+.btn-contact {
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo con transparencia */
+    border: 2px solid white;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Aumenta la opacidad al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumentar ligeramente el tamaño */
+}
+
+/* Estilo para el formulario de contacto */
+.formulario-contacto {
+    display: none; /* El formulario está oculto inicialmente */
+    position: fixed; /* Fija el formulario en la pantalla */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para asegurar que esté centrado */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo oscuro con algo de transparencia */
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 50%; /* Ajusta el ancho del formulario */
+    max-width: 600px; /* Máximo ancho para el formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave para darle profundidad */
+    text-align: left; /* Alineación del texto dentro del formulario */
+    z-index: 100; /* Asegura que se muestre por encima de otros elementos */
+    transition: all 0.3s ease; /* Transición suave para la aparición */
+    display: flex;
+    flex-direction: column; /* Hace que los elementos dentro se organicen verticalmente */
+    justify-content: flex-start; /* Asegura que el contenido se alinee desde el principio */
+}
+
+/* Estilo del título h2 */
+.formulario-contacto h2 {
+    font-family: Playfair, regular;
+    font-size: 1.8rem; /* Tamaño moderado */
+    color: rgb(181, 163, 142); /* Color del texto */
+    margin: 0; /* Elimina el margen para ajustarlo con precisión */
+    text-align: center; /* Centrado del texto */
+    padding-bottom: 15px; /* Espacio debajo del título */
+    margin-top: 0; /* Asegura que no tenga margen arriba */
+}
+
+/* Estilos para los campos del formulario */
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff; /* Fondo blanco para los campos de entrada */
+    color: #333; /* Color de texto en los campos */
+    font-size: 1rem; /* Tamaño de texto consistente */
+}
+
+/* Estilo para el botón de envío */
+.formulario-contacto button {
+    background-color: #998754; /* Color verde */
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* El botón ocupa el 100% del ancho del formulario */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para el botón de envío */
+.formulario-contacto button:hover {
+    background-color: #fcf4e5; /* Color verde más oscuro */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el mouse */
+}
+
+/* Estilos para las etiquetas de los campos */
+.formulario-contacto label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #746054;
+}
+
+/* Estilo para el formulario cuando está visible (se añade la clase show) */
+.formulario-contacto.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el contenedor del formulario de contacto (fondo transparente) */
+.overlay-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(142, 110, 65, 0.5); /* Fondo semitransparente para el overlay */
+    z-index: 99; /* Asegura que el overlay cubra todo el contenido */
+}
+
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+    color: rgb(158, 136, 100);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del mensaje */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Aseguramos que el botón de Aceptar tenga el mismo estilo que el de Contactanos */
+.mensaje-exito button {
+    background-color: rgba(187, 161, 127, 0.6); /* Fondo blanco con transparencia */
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.mensaje-exito button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Aumenta la opacidad al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumentar ligeramente el tamaño */
+}
+
+/* ============================================
+    TERCERA SECCIÓN
+============================================= */
+.tercera-seccion {
+    background-color: #8e715c; /* Color café */
+    color: white;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    scroll-snap-align: start; /* Asegura que se haga scroll manual a esta sección */
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Puedes ajustar el ancho según sea necesario */
+}
+
+.parrafo-izquierda {
+    font-size: 2.5rem;
+    width: 40%; /* Ajusta el ancho para que se vea equilibrado */
+    text-align: left;
+}
+
+.parrafo-derecha {
+    font-family: var(--font-family-secondary);
+    font-style: italic;
+    width: 40%;
+    text-align: right;
+}
+
+.parrafo-izquierda h1 {
+    font-family: var(--font-family-secondary);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.parrafo-izquierda p {
+    font-family: var(--font-family-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.cargo {
+    font-weight: bold;
+}
+
+.parrafo-derecha p {
+    font-size: 2.4rem;
+    line-height: 1.6;
 }

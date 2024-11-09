@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El MUEBLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-    
-</body>
-</html>
-<!-- Primera Parte de la Página -->
     <!-- Navbar -->
     <header>
         <nav class="navbar">
@@ -24,7 +24,7 @@
                 <h1>EL MUEBLE</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#">Acerca de</a></li>
+                <li><a href="#acerca-de">Acerca de</a></li>
                 <li><a href="#">Decoración</a></li>
                 <li><a href="#">Recomendaciones</a></li>
                 <li><a href="#">Inspiración</a></li>
@@ -32,7 +32,7 @@
         </nav>
     </header>
 
-    <!-- Sección Principal (Hero) -->
+    <!-- Sección Principal -->
     <section class="hero-section">
         <div class="overlay"></div>
         <div class="content">
@@ -41,3 +41,56 @@
         </div>
     </section>
 
+    <!-- Segunda Parte de la Página (Acerca de) -->
+    <section id="acerca-de" class="acerca-de">
+        <div class="info-container">
+            <div class="linea-vertical superior"></div>
+            <div class="about-content">
+                <h1>Historia</h1>
+                <p>El Mueble es una revista española dedicada al diseño de interiores y la decoración, que se fundó en 1985. Desde su inicio, ha buscado inspirar a sus lectores con ideas sobre cómo transformar sus espacios, combinando tendencias, consejos prácticos y reportajes sobre proyectos de decoración.</p>
+                <p>La publicación ha visitado más de 7,000 hogares y ha publicado cientos de miles de fotos, adaptándose al estilo y a los gustos cambiantes de sus lectores. Con el tiempo, se ha transformado en una comunidad que conecta a lectores de distintas generaciones, extendiéndose a medios digitales donde sigue inspirando y marcando tendencia en el mundo del diseño de interiores.</p>
+            </div>
+            <div class="linea-vertical inferior"></div>
+        </div>
+    </section>
+
+    <!-- Tercera Sección -->
+    <section class="tercera-seccion" id="tercera-seccion">
+        <div class="contenido">
+            <div class="parrafo-izquierda">
+                <h1>Equipo</h1>
+                <p><span class="cargo">Presidente</span> Ricardo Rodrigo</p>
+                <p><span class="cargo">Editora</span> Ana Rodrigo</p>
+                <p><span class="cargo">Director General Corporativo</span> Joan Borrell</p>
+                <p><span class="cargo">Directora General</span> Aurea Diaz</p>
+                <p><span class="cargo">Directora de Marketing</span> Berta Castellet</p>
+                <p><span class="cargo">Directora Creativa</span> Jordina Salvany</p>
+                <p><span class="cargo">Director de Desarrollo Digital</span> José Luis Gómez</p>
+                <p><span class="cargo">Directora Editorial</span> Susana Gómez Marculeta</p>
+               <!-- Botón de Contacto -->
+<button class="btn-contact" onclick="mostrarFormulario()">Contáctanos</button>
+
+<!-- Formulario oculto inicialmente -->
+<div id="formulario-contacto" class="formulario-contacto">
+    <h2>Formulario de Contacto</h2>
+    <form id="contact-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
+ </div>
+            <div class="parrafo-derecha">
+                <p>“Mas de 50 años retratando casas y hogares de ensueño para que puedas inspirarte y convertir tu casa en la más cálida, acogedora y cómoda del mundo”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>
