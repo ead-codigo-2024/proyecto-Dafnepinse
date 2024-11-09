@@ -1,78 +1,81 @@
-// Función para mostrar u ocultar el formulario
-function mostrarFormulario() {
-    var formulario = document.getElementById("formulario-contacto");
-    // Alterna la visibilidad del formulario
-    if (formulario.style.display === "flex") {
-        formulario.style.display = "none"; // Oculta el formulario
-        localStorage.setItem('formularioVisible', 'false'); // Guardar en localStorage que está oculto
-    } else {
-        formulario.style.display = "flex"; // Muestra el formulario
-        localStorage.setItem('formularioVisible', 'true'); // Guardar en localStorage que está visible
-    }
+// Selección del formulario de contacto y el formulario de contacto real
+const formulario = document.getElementById("formulario-contacto");
+const form = document.getElementById("contact-form");
+
+// Función para alternar la visibilidad del formulario y actualizar el estado en localStorage
+function toggleFormulario() {
+    const isVisible = formulario.style.display === "flex";
+    formulario.style.display = isVisible ? "none" : "flex";
+    localStorage.setItem('formularioVisible', !isVisible); // Guardar estado actualizado
 }
 
-// Comprobar el estado del formulario al cargar la página
+// Mostrar u ocultar el formulario al cargar según el estado guardado en localStorage
 window.addEventListener('load', () => {
-    const formularioVisible = localStorage.getItem('formularioVisible');
-    
-    // Si está visible, mostrar el formulario
-    if (formularioVisible === 'true') {
-        var formulario = document.getElementById("formulario-contacto");
-        formulario.style.display = "flex"; // Muestra el formulario
-    } else {
-        var formulario = document.getElementById("formulario-contacto");
-        formulario.style.display = "none"; // Oculta el formulario
-    }
+    const formularioVisible = localStorage.getItem('formularioVisible') === 'true';
+    formulario.style.display = formularioVisible ? "flex" : "none";
 });
 
 // Manejo del envío del formulario
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita que se envíe el formulario por defecto
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío por defecto
 
     // Obtener los valores de los campos
-    var nombre = document.getElementById("nombre").value;
-    var email = document.getElementById("email").value;
-    var mensaje = document.getElementById("mensaje").value;
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const mensaje = document.getElementById("mensaje").value;
 
-    // Aquí puedes agregar más validaciones si lo deseas
+    // Validación: comprobar que los campos no estén vacíos
     if (nombre && email && mensaje) {
-        // Crear y mostrar el mensaje de éxito
-        var mensajeExito = document.createElement("div");
-        mensajeExito.classList.add("mensaje-exito");
-
-        // Crear el texto de éxito
-        var textoExito = document.createElement("p");
-        textoExito.textContent = "¡Formulario enviado con éxito!";
-
-        // Crear el botón de Aceptar
-        var botonAceptar = document.createElement("button");
-        botonAceptar.textContent = "Aceptar";
-        botonAceptar.classList.add("btn-contact"); // Usamos el estilo de btn-contact
-
-        // Agregar el mensaje y el botón a la capa de éxito
-        mensajeExito.appendChild(textoExito);
-        mensajeExito.appendChild(botonAceptar);
-
-        // Agregar la capa de éxito al formulario
-        var formulario = document.getElementById("formulario-contacto");
-        formulario.innerHTML = ""; // Limpiar el formulario
-        formulario.appendChild(mensajeExito); // Agregar el mensaje
-
-        // Mostrar el mensaje de éxito
-        mostrarFormulario();
-
-        // Evento para cerrar el formulario cuando se hace clic en "Aceptar"
-        botonAceptar.addEventListener("click", function() {
-            // Ocultar el formulario al hacer clic en el botón "Aceptar"
-            mostrarFormulario();
-        });
-
-        // Reiniciar el formulario después de mostrar el éxito
-        setTimeout(function() {
-            document.getElementById("contact-form").reset(); // Reinicia el formulario
-            mostrarFormulario(); // Cierra el formulario
-        }, 3000); // Lo cierra después de 3 segundos
+        mostrarMensajeExito(); // Llama a función que muestra el mensaje de éxito
     } else {
         alert("Por favor, complete todos los campos.");
     }
 });
+
+// Función para mostrar mensaje de éxito y ocultar el formulario
+function mostrarMensajeExito() {
+    formulario.innerHTML = ""; // Limpiar el contenido del formulario
+
+    // Crear mensaje de éxito
+    const mensajeExito = document.createElement("div");
+    mensajeExito.classList.add("mensaje-exito");
+    mensajeExito.innerHTML = `<p>¡Formulario enviado con éxito!</p>`;
+
+    // Crear botón de aceptar
+    const botonAceptar = document.createElement("button");
+    botonAceptar.textContent = "Aceptar";
+    botonAceptar.classList.add("btn-contact");
+
+    mensajeExito.appendChild(botonAceptar);
+    formulario.appendChild(mensajeExito); // Agregar mensaje y botón al formulario
+
+    // Alternar visibilidad del formulario con botón o temporizador
+    toggleFormulario();
+    const timeout = setTimeout(toggleFormulario, 3000); // Cerrar automáticamente tras 3 segundos
+
+    // Cerrar si el usuario hace clic en "Aceptar" antes de los 3 segundos
+    botonAceptar.addEventListener("click", () => {
+        clearTimeout(timeout);
+        toggleFormulario();
+    });
+
+    // Limpiar localStorage y reiniciar el formulario
+    localStorage.removeItem('formularioVisible');
+    form.reset();
+}
+
+function mostrarFormulario() {
+    const formulario = document.getElementById('formulario-contacto');
+    
+    // Cambiar la visibilidad del formulario al hacer clic
+    if (formulario.style.display === 'none' || formulario.style.display === '') {
+        formulario.style.display = 'block'; // Muestra el formulario
+    } else {
+        formulario.style.display = 'none'; // Oculta el formulario
+    }
+}
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}

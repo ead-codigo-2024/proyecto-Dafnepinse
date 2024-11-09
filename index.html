@@ -6,8 +6,10 @@
     <title>El MUEBLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Desplazamiento suave */
@@ -23,11 +25,39 @@
             <div class="logo">
                 <h1>EL MUEBLE</h1>
             </div>
+            <!-- Icono del menú -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Enlaces del menú -->
             <ul class="nav-links">
                 <li><a href="#acerca-de">Acerca de</a></li>
-                <li><a href="#">Decoración</a></li>
-                <li><a href="#">Recomendaciones</a></li>
-                <li><a href="#">Inspiración</a></li>
+                <li><a href="#decoracion">Decoración</a>
+                    <!-- Submenú de Decoración -->
+                    <ul class="submenu">
+                        <li><a href="#decoracion-modernista">Modernista</a></li>
+                        <li><a href="#decoracion-clasica">Clásica</a></li>
+                        <li><a href="#decoracion-contemporanea">Contemporánea</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Recomendados">Recomendados</a>
+                    <!-- Submenú de Inspiración -->
+                    <ul class="submenu">
+                        <li><a href="#inspiracion-paisajismo">Paisajismo</a></li>
+                        <li><a href="#inspiracion-arte">Arte</a></li>
+                        <li><a href="#inspiracion-escultura">Escultura</a></li>
+                    </ul>
+                </li>
+                <li><a href="#inspiracion">Inspiración</a>
+                    <!-- Submenú de Recomendados -->
+                    <ul class="submenu">
+                        <li><a href="#recomendados-muebles">Muebles</a></li>
+                        <li><a href="#recomendados-accesorios">Accesorios</a></li>
+                        <li><a href="#recomendados-tendencias">Tendencias</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -67,11 +97,12 @@
                 <p><span class="cargo">Directora Creativa</span> Jordina Salvany</p>
                 <p><span class="cargo">Director de Desarrollo Digital</span> José Luis Gómez</p>
                 <p><span class="cargo">Directora Editorial</span> Susana Gómez Marculeta</p>
-               <!-- Botón de Contacto -->
-<button class="btn-contact" onclick="mostrarFormulario()">Contáctanos</button>
+                
+                <!-- Botón de Contacto -->
+                <button class="btn-contact" onclick="mostrarFormulario()">Contáctanos</button>
 
 <!-- Formulario oculto inicialmente -->
-<div id="formulario-contacto" class="formulario-contacto">
+<div id="formulario-contacto" class="formulario-contacto" style="display:none;">
     <h2>Formulario de Contacto</h2>
     <form id="contact-form">
         <label for="nombre">Nombre:</label>
@@ -83,14 +114,39 @@
         <button type="submit">Enviar</button>
     </form>
 </div>
- </div>
+            </div>
             <div class="parrafo-derecha">
-                <p>“Mas de 50 años retratando casas y hogares de ensueño para que puedas inspirarte y convertir tu casa en la más cálida, acogedora y cómoda del mundo”</p>
+                <p>“Más de 50 años retratando casas y hogares de ensueño para que puedas inspirarte y convertir tu casa en la más cálida, acogedora y cómoda del mundo”</p>
             </div>
         </div>
     </section>
 
     <!-- Enlace al archivo JavaScript -->
     <script src="scripts.js"></script>
+
+<!-- Cuarta Sección -->
+<section class="cuarta-seccion">
+    <div class="texto-izquierda">
+        <h2>Decoración</h2>
+        <p>En esta sección de El Mueble, exploramos diversas maneras de embellecer tus espacios con detalles únicos y personales. Desde el encanto de los mosaicos hasta la delicadeza de los floreros, pasando por la recuperación de muebles antiguos y el lujo de las alfombras tibetanas, cada elemento aporta estilo y carácter a tu hogar. Selecciona cualquiera de estas opciones para descubrir ideas inspiradoras y consejos prácticos que te ayudarán a crear ambientes llenos de armonía y personalidad.</p>
+        <p>Cada artículo ofrece no solo recomendaciones decorativas, sino también una guía para expresar tu propio estilo a través de cada espacio. Explora y transforma tu hogar con propuestas que combinan funcionalidad, belleza y autenticidad.</p>
+    </div>
+    <div class="cuadrados-derecha">
+        <div class="cuadrado" style="background-image: url('imagenes/MOSAICOS.1.jpg');">
+            <span>MOSAICOS</span>
+        </div>
+        <div class="cuadrado" style="background-image: url('imagenes/RECUPERARMUEBLES.1.jpg');">
+            <span>RECUPERAR MUEBLES</span>
+        </div>
+        <div class="cuadrado" style="background-image: url('imagenes/FLOREROS.1.jpg');">
+            <span>FLOREROS</span>
+        </div>
+        <div class="cuadrado" style="background-image: url('imagenes/ALFOMBRAS.1.jpg');">
+            <span>ALFOMBRAS TIBETANAS</span>
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>

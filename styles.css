@@ -7,19 +7,18 @@
     --button-text-hover: black;
     --font-family-primary: 'Arial', sans-serif;
     --font-family-secondary: 'Playfair Display', serif;
-    --font-size-h1: 6rem;
+    --font-size-h1: 4rem;
     --font-size-h2: 2rem;
     --font-size-p: 1.2rem;
 }
 
-/* Reset de márgenes y padding para evitar inconsistencias entre navegadores */
+/* Reset de márgenes y padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
     font-family: var(--font-family-primary);
     color: var(--primary-color);
@@ -27,9 +26,7 @@ body {
     padding: 0;
 }
 
-/* ============================================
-    NAVBAR (Barra de navegación)
-============================================= */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -63,30 +60,28 @@ body {
     font-size: 1rem;
 }
 
-/* ============================================
-    BOTONES
-============================================= */
-.shop-now a {
+/* BOTONES */
+.shop-now a, .btn-contact, .mensaje-exito button {
     text-decoration: none;
     border: 2px solid var(--primary-color);
     padding: 10px 20px;
     border-radius: 20px;
     color: var(--primary-color);
     font-size: 1rem;
-}
-
-.shop-now a:hover {
-    background-color: var(--button-bg-hover);
-    color: var(--button-text-hover);
+    cursor: pointer;
     transition: 0.3s;
 }
 
-/* ============================================
-    PRIMERA SECCIÓN (Hero Section)
-============================================= */
+.shop-now a:hover, .btn-contact:hover, .mensaje-exito button:hover {
+    background-color: var(--button-bg-hover);
+    color: var(--button-text-hover);
+    transform: scale(1.05);
+}
+
+/* HERO SECTION */
 .hero-section {
     background: url('imagenes/FONDO-F1.jpg') no-repeat center center/cover;
-    height: 100vh; /* Full screen height */
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -100,197 +95,123 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--accent-color); /* Darken background */
+    background-color: var(--accent-color);
 }
 
 .content {
     position: relative;
     z-index: 1;
     color: var(--primary-color);
+    text-align: center;
 }
 
-.content h2 {
-    font-size: var(--font-size-h2);
-    font-weight: 300;
-    margin-bottom: 10px;
-}
-
-.content h1 {
+.content h1, .acerca-de h1, .parrafo-izquierda h1 {
     font-family: var(--font-family-secondary);
-    font-size: 60px;
+    font-size: var(--font-size-h1);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-.content p {
+.content p, .acerca-de p, .parrafo-izquierda p, .parrafo-derecha p {
     font-family: var(--font-family-secondary);
-    font-size: 25px;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: var(--font-size-p);
+    max-width: 600px;margin: 0 auto;
 }
 
-/* ============================================
-    SEGUNDA SECCIÓN (Acerca de)
-============================================= */
+/* ACERCA DE */
 .acerca-de {
-    height: 100vh; /* Altura completa de la ventana */
+    height: 100vh;
     padding: 50px 20px;
-    background-color: #f4f4f4; /* Color de fondo */
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative; /* Necesario para que las líneas se posicionen dentro de esta sección */
+    position: relative;
 }
 
-.acerca-de h1 {
-    font-family: var(--font-family-secondary);
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-.acerca-de p {
-    font-family: var(--font-family-secondary);
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: var(--secondary-color);
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-/* Línea vertical decorativa centrada en la sección */
 .linea-vertical {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Centra la línea */
-    width: 1.5px; /* Grosor de la línea */
+    transform: translateX(-50%);
+    width: 1.5px;
     background-color: rgb(53, 51, 51);
 }
 
-/* Línea vertical decorativa encima del título */
 .linea-vertical.superior {
-    top: 0; /* Posiciona la línea en la parte superior */
-    height: 20%; /* Ajusta la altura de la línea */
+    top: 0;
+    height: 20%;
 }
 
-/* Línea vertical decorativa debajo del párrafo */
 .linea-vertical.inferior {
-    bottom: 0; /* Posiciona la línea en la parte inferior */
-    height: 20%; /* Ajusta la altura de la línea */
+    bottom: 0;
+    height: 20%;
 }
 
-.btn-contact {
-    background-color: rgba(255, 255, 255, 0.6); /* Fondo con transparencia */
-    border: 2px solid white;
-    color: white;
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-contact:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Aumenta la opacidad al pasar el mouse */
-    transform: scale(1.05); /* Efecto de aumentar ligeramente el tamaño */
-}
-
-/* Estilo para el formulario de contacto */
+/* FORMULARIO DE CONTACTO */
 .formulario-contacto {
-    display: none; /* El formulario está oculto inicialmente */
-    position: fixed; /* Fija el formulario en la pantalla */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para asegurar que esté centrado */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo oscuro con algo de transparencia */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
     color: white;
     padding: 30px;
     border-radius: 15px;
-    width: 50%; /* Ajusta el ancho del formulario */
-    max-width: 600px; /* Máximo ancho para el formulario */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave para darle profundidad */
-    text-align: left; /* Alineación del texto dentro del formulario */
-    z-index: 100; /* Asegura que se muestre por encima de otros elementos */
-    transition: all 0.3s ease; /* Transición suave para la aparición */
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    z-index: 100;
     display: flex;
-    flex-direction: column; /* Hace que los elementos dentro se organicen verticalmente */
-    justify-content: flex-start; /* Asegura que el contenido se alinee desde el principio */
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-/* Estilo del título h2 */
 .formulario-contacto h2 {
     font-family: Playfair, regular;
-    font-size: 1.8rem; /* Tamaño moderado */
-    color: rgb(181, 163, 142); /* Color del texto */
-    margin: 0; /* Elimina el margen para ajustarlo con precisión */
-    text-align: center; /* Centrado del texto */
-    padding-bottom: 15px; /* Espacio debajo del título */
-    margin-top: 0; /* Asegura que no tenga margen arriba */
+    font-size: 1.8rem;
+    color: rgb(181, 163, 142);
+    text-align: center;
+    margin-top: 0;
 }
 
-/* Estilos para los campos del formulario */
-.formulario-contacto input,
-.formulario-contacto textarea {
+.formulario-contacto input, .formulario-contacto textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #ffffff; /* Fondo blanco para los campos de entrada */
-    color: #333; /* Color de texto en los campos */
-    font-size: 1rem; /* Tamaño de texto consistente */
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
 }
 
-/* Estilo para el botón de envío */
 .formulario-contacto button {
-    background-color: #998754; /* Color verde */
+    background-color: #998754;
     border: none;
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
     cursor: pointer;
-    font-size: 1rem;
-    width: 100%; /* El botón ocupa el 100% del ancho del formulario */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
 }
 
-/* Efecto hover para el botón de envío */
-.formulario-contacto button:hover {
-    background-color: #fcf4e5; /* Color verde más oscuro */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el mouse */
-}
-
-/* Estilos para las etiquetas de los campos */
-.formulario-contacto label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #746054;
-}
-
-/* Estilo para el formulario cuando está visible (se añade la clase show) */
-.formulario-contacto.show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Estilo para el contenedor del formulario de contacto (fondo transparente) */
+/* OVERLAY FORM */
 .overlay-form {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(142, 110, 65, 0.5); /* Fondo semitransparente para el overlay */
-    z-index: 99; /* Asegura que el overlay cubra todo el contenido */
+    background-color: rgba(142, 110, 65, 0.5);
+    z-index: 99;
 }
 
-/* Estilo para el mensaje de éxito */
+/* MENSAJE DE ÉXITO */
 .mensaje-exito {
     color: rgb(158, 136, 100);
     padding: 20px;
@@ -298,7 +219,7 @@ body {
     border-radius: 10px;
     font-size: 1.5rem;
     width: 100%;
-    max-width: 400px; /* Ancho máximo del mensaje */
+    max-width: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -306,74 +227,178 @@ body {
     align-items: center;
 }
 
-/* Aseguramos que el botón de Aceptar tenga el mismo estilo que el de Contactanos */
-.mensaje-exito button {
-    background-color: rgba(187, 161, 127, 0.6); /* Fondo blanco con transparencia */
-    border: 2px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 20px;
-}
-
-.mensaje-exito button:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Aumenta la opacidad al pasar el mouse */
-    transform: scale(1.05); /* Efecto de aumentar ligeramente el tamaño */
-}
-
-/* ============================================
-    TERCERA SECCIÓN
-============================================= */
+/* TERCERA SECCIÓN */
 .tercera-seccion {
-    background-color: #8e715c; /* Color café */
+    background-color: #8e715c;
     color: white;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    scroll-snap-align: start; /* Asegura que se haga scroll manual a esta sección */
 }
 
 .contenido {
     display: flex;
     justify-content: space-between;
-    width: 80%; /* Puedes ajustar el ancho según sea necesario */
+    width: 80%;
 }
 
-.parrafo-izquierda {
-    font-size: 2.5rem;
-    width: 40%; /* Ajusta el ancho para que se vea equilibrado */
-    text-align: left;
+.parrafo-izquierda, .parrafo-derecha {
+    width: 40%;
 }
 
 .parrafo-derecha {
     font-family: var(--font-family-secondary);
     font-style: italic;
-    width: 40%;
     text-align: right;
-}
-
-.parrafo-izquierda h1 {
-    font-family: var(--font-family-secondary);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.parrafo-izquierda p {
-    font-family: var(--font-family-secondary);
-    font-size: 1.2rem;
-    line-height: 1.6;
 }
 
 .cargo {
     font-weight: bold;
 }
 
-.parrafo-derecha p {
-    font-size: 2.4rem;
-    line-height: 1.6;
+/* Navegación en pantallas grandes */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    font-family: var(--font-family-secondary);
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* Estilo del botón de menú para móviles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 4px 0;
+}
+
+/* Mostrar el botón de menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar menú por defecto */
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+    }
+}
+.nav-links li {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.submenu li {
+    padding: 10px 20px;
+}
+
+.nav-links li:hover .submenu {
+    display: block;
+}
+
+/* CUARTA SECCIÓN */
+.cuarta-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.cuarta-seccion .texto-izquierda {
+    width: 50%;
+    padding: 20px;
+}
+
+.cuarta-seccion h2 {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-h2);
+    color: var(--secondary-color);
+    margin-bottom: 100px;
+}
+
+.cuarta-seccion p {
+    font-family: var(--font-family-secondary);
+    font-size: var(--font-size-p);
+    color: var(--secondary-color);
+    line-height: 1.5;
+}
+
+.cuadrados-derecha {
+    width: 45%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cuadrado {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cuadrado:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.cuadrado span {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para texto */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
