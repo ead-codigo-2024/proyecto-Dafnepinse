@@ -1,0 +1,80 @@
+/* Estilos básicos y minimalistas */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background: linear-gradient(rgba(255, 255, 255, 0.645), rgba(255, 255, 255, 0.645)), url('imagenes/FONDRECO.jpg'); 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 20px;
+}
+
+h1 {
+    font-family: Playfair;
+    text-align: center;
+    font-size: 2em;
+    color: #676657;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la cuadrícula de libros */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px;
+}
+
+/* Estilos para los elementos de cada libro */
+.book {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+}
+
+.book-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.book-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.book-description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}

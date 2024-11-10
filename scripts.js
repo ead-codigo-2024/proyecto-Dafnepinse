@@ -79,3 +79,14 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
+
+// Función para abrir el submenú y hacer scroll hacia la sección 4
+function toggleMenuAndScroll() {
+    // Abrir o cerrar el submenú (asegúrate de que la clase 'submenu' tiene una animación o cambio de visibilidad)
+    const submenu = document.querySelector('.submenu');
+    submenu.classList.toggle('active'); // Asegúrate de tener una clase 'active' en CSS para mostrar el submenú
+
+    // Desplazar hacia la sección 4 (con el id de la sección 4)
+    const section4 = document.getElementById('cuarta-seccion');
+    section4.scrollIntoView({ behavior: 'smooth' }); // Hace un scroll suave
+}

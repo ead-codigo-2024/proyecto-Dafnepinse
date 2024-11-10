@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="decoracion.css">
+    <title>Alfombras Tibetanas</title>
+</head>
+<body>
+
+<div class="content">
+
+    <a href="index.html" class="back-button">Volver al inicio</a>
+    
+    <!-- Sección de título y texto -->
+    <section class="text-section">
+        <h1>Alfombras Tibetanas: Arte y Tradición para tu Hogar</h1>
+        <p>Las alfombras tibetanas son verdaderas obras de arte, hechas a mano con técnicas ancestrales que reflejan la rica herencia cultural de Tíbet. Elaboradas con lana de alta calidad, sus diseños únicos aportan una sensación de calidez y sofisticación a cualquier espacio. Ya sea en tonos neutros o con colores vivos, cada alfombra cuenta una historia y transforma cualquier rincón en un lugar especial.</p>
+    </section>
+
+    <!-- Sección de galería -->
+    <section class="gallery">
+        <img src="imagenes/ALF1.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+        <img src="imagenes/ALF2.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+        <img src="imagenes/ALF3.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+        <img src="imagenes/ALF4.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+        <img src="imagenes/ALF5.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+        <img src="imagenes/ALF6.jpg" alt="" class="gallery-item" onclick="openModal(this)">
+    </section>
+</div>
+
+<!-- Modal para la imagen a pantalla completa -->
+<div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script>
+// Función para abrir el modal
+function openModal(img) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    
+    modal.style.display = "flex"; // Mostrar el modal
+    modalImg.src = img.src; // Establecer la imagen en el modal
+    captionText.innerHTML = img.alt; // Establecer el texto de la imagen
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    document.getElementById("myModal").style.display = "none"; // Ocultar el modal
+}
+</script>
+
+</body>
+</html>
